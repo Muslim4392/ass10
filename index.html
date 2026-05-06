@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 45px;
+        width: 100px;
+    }
+    h2 {
+        font-size: 80px;
+        color: blue;
+        margin-top: 150px;
+    }
+</style>
+<body>
+
+    <h1>tasbeeh counter</h1>
+    <h2 id="count">0</h2>
+    <h3 id="zikr">zikr</h3>
+
+    <button onclick="inc()">click</button>
+
+</body>
+<script>
+    let count = 0;
+    function inc() {
+        count++;
+        document.getElementById("count").innerHTML = count;
+        if (count <= 33) {
+            document.getElementById("zikr").innerHTML = "subhanallah";
+        } else if (count <= 66) {
+            document.getElementById("zikr").innerHTML = "alhamdulillah";
+        } else if (count <= 99) {
+            document.getElementById("zikr").innerHTML = "allahu akbar";
+        } else if (count == 100) {
+            count = 0;
+            document.getElementById("count").innerHTML = count;
+            document.getElementById("zikr").innerHTML = "zikr";
+        }
+    }
+    
+</script>
+</html>
